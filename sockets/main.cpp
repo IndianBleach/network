@@ -34,7 +34,7 @@ int main() {
 	socketClient client("8080");
 	client.sockConnect();
 
-	client.sendMsg("hi\n");
+	client.sendMsg("test test\n");
 
 	// run clients (main process)
 	tr.join();
