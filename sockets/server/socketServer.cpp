@@ -78,7 +78,7 @@ void socketServer::start() {
 		}
 
 		int result
-			= recv(m_SocketId, m_clientInfo.buffer, CLIENT_MSG_BUFFER_LEN, 0);
+			= recv(client_socket, m_clientInfo.buffer, CLIENT_MSG_BUFFER_LEN, 0);
 
 		if (result < 0) {
 			std::cerr << "socketServer: err: call=start.recv(); code=" << result << std::endl;
@@ -93,16 +93,16 @@ void socketServer::start() {
 			std::cout << "socketServer: msg received: " << m_clientInfo.buffer << std::endl;
 		}
 
-		std::string response = "response from socket";
+		//std::string response = "response from socket";
 
-		result = send(m_SocketId, response.c_str(), response.size(), 0);
+		//result = send(m_SocketId, response.c_str(), response.size(), 0);
 
-		if (result == SOCKET_ERROR) {
-			std::cerr << "socketServer: err: call=start.send(); code=" << result << std::endl;
-		}
+		//if (result == SOCKET_ERROR) {
+		//	std::cerr << "socketServer: err: call=start.send(); code=" << result << std::endl;
+		//}
 
 		// close client connection
-		closesocket(client_socket);
+		//closesocket(client_socket);
 	}
 }
 
